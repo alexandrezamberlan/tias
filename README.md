@@ -40,7 +40,7 @@ Na mineração de dados e no reconhecimento de padrões, **predição** e **prev
 
 | Termo        | Escopo                             | Pode ser sobre passado/presente desconhecido? | Sempre envolve futuro? | Exemplo                                            |
 | ------------ | ---------------------------------- | --------------------------------------------- | ---------------------- | -------------------------------------------------- |
-| **Predição** | Mais amplo                         | Sim                                           | Não                    | Prever a classe de um cliente atual (“alto risco”) |
+| **Predição** | Mais amplo                         | Sim                                           | Não                    | Rotular a classe de um cliente atual (“alto risco”) |
 | **Previsão** | Mais específico (séries temporais) | Não                                           | Sim                    | Prever o faturamento do mês que vem                |
 
 
