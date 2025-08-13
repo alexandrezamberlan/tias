@@ -45,7 +45,7 @@ Na mineração de dados e no reconhecimento de padrões, **predição** e **prev
 
 
 
-**Na mineração de dados **:
+**Na mineração de dados**:
 
 * Se o modelo **não depende diretamente do tempo** (ex.: classificação de imagens, detecção de fraude em transações), está se falando de **predição**.
 * Se seu modelo **usa o histórico temporal** para estimar algo que ainda vai acontecer, está se  referindo a **previsão**.
