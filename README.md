@@ -1,2 +1,2 @@
-# tias
-Material de apoio da disciplina Tecnologias Inteligentes Aplicadas à Saúde dos cursos de Computação UFN.
+# Tecnologias Inteligentes Aplicadas à Saúde
+Material de apoio da disciplina nos cursos de Computação UFN.
