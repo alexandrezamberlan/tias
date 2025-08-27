@@ -11,7 +11,6 @@ Material de apoio da disciplina nos cursos de Computação UFN.
 
 Na mineração de dados e no reconhecimento de padrões, **predição** e **previsão** até parecem a mesma coisa no uso cotidiano, mas tecnicamente não são idênticas — e essa diferença é importante dependendo do contexto.
 
----
 
 #### Predição
 
