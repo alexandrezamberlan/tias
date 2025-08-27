@@ -1,5 +1,9 @@
 # Quadro Branco
 
+## Semana 5
+    - Fixação de predição e previsão
+    - Trabalho sobre a base de glicemia - 3_dados_para_manipulacao/glicose_data.csv
+
 ## Semana 4
     - Códigos exemplos mas com acesso a bases reais - via link 
         - predição - genérico - sem tempo futuro - CATEGORIZAÇÃO/CLASSIFICAÇÃO/ROTULAÇÃO
@@ -16,7 +20,7 @@
     - Recomendação -> predição e previsão -> indicar medicamentos, tratamentos (fisio, nutriçao)
 
 
-## Semanas 3
+## Semana 3
     - Apresentação e discussão da pesquisa
     - Entender na prática a diferença de Predição e Previsão
 
