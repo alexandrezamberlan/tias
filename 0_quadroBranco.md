@@ -1,6 +1,7 @@
 # Quadro Branco
 
 ## Semana 5
+    - Uso de pandas e numpy - https://github.com/alexandrezamberlan/python-cienciadados
     - Fixação de predição e previsão
     - Trabalho sobre a base de glicemia - 3_dados_para_manipulacao/glicose_data.csv
 

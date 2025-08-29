@@ -18,7 +18,7 @@ O site bi-sus consolida e apresenta dados derivados do SIH/SUS de forma amigáve
 #2. Treinar um modelo de previsão (regressão linear simples) para estimar internações futuras.
 #3. Comparar com o exemplo de predição (classificação clínica) no mesmo contexto da saúde.
 
-import pandas as pd
+import pandas as pd #dataframes
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression, LinearRegression
 import matplotlib.pyplot as plt
