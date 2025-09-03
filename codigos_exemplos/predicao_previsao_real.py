@@ -2,7 +2,7 @@
 '''
 1. SIH/SUS — Sistema de Informações Hospitalares
 
-O SIH/SUS registra mensalmente as internações hospitalares realizadas em todo o Brasil. É uma fonte que permite montar séries temporais a partir de dados reais.
+O SIH/SUS registra mensalmente as internações hospitalares realizadas em todo o Brasil. É uma fonte que permite montar séries temporais a partir de dados reais. - SÉRIE TEMPORAIS == PREVISÃO
 
 2. OpenDataSUS
 
