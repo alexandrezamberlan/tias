@@ -1,16 +1,12 @@
-# Comparativo entre os modelos de predição
 
-1. Treina **vários modelos de classificação**
-2. Usa seus dados `X` e `y` (carregar isso antes).
-3. Mostra a **acurácia de cada modelo** de forma comparativa.
-
+# Comparativo entre modelos de predição sob a base Glicose
 
 ```python
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score
 from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import accuracy_score, classification_report, confusion_matrix, f1_score
 
 # Modelos de classificação
 from sklearn.linear_model import LogisticRegression
@@ -20,30 +16,27 @@ from sklearn.naive_bayes import GaussianNB
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.svm import SVC
 
-# (Opcional) Modelos mais avançados
-# !pip install xgboost lightgbm catboost
-# from xgboost import XGBClassifier
-# from lightgbm import LGBMClassifier
-# from catboost import CatBoostClassifier
+# 1. Carregar os dados
+url = 'https://raw.githubusercontent.com/alexandrezamberlan/tias/refs/heads/main/predicao_previsao_codigos_exemplos/glicose_data.csv'
+df = pd.read_csv(url)
 
-# ---------------------
-# 1. Substitua X e y pelos seus dados
-# ---------------------
-# Exemplo fictício se você não tiver dados ainda:
-# from sklearn.datasets import load_breast_cancer
-# data = load_breast_cancer()
-# X = pd.DataFrame(data.data, columns=data.feature_names)
-# y = pd.Series(data.target)
+# 2. Features e variável alvo
+features = ['INSULINA', 'KCAL', 'CARB', 'SONO', 'padel']
+target = 'GLICEMIA'
 
-# 2. Dividir dados
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+X = df[features]
+y = df[target]
 
-# 3. Padronização (importante para modelos como SVM e KNN)
+# 3. Divisão treino/teste com estratificação
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.3, random_state=42, stratify=y)
+
+# 4. Padronizar (necessário para SVM e KNN)
 scaler = StandardScaler()
 X_train = scaler.fit_transform(X_train)
 X_test = scaler.transform(X_test)
 
-# 4. Definir os modelos
+# 5. Modelos de classificação
 modelos = {
     'Logistic Regression': LogisticRegression(max_iter=1000),
     'Decision Tree': DecisionTreeClassifier(),
@@ -51,48 +44,62 @@ modelos = {
     'KNN': KNeighborsClassifier(),
     'Naive Bayes': GaussianNB(),
     'SVM': SVC(),
-    'Gradient Boosting': GradientBoostingClassifier(),
-    # 'XGBoost': XGBClassifier(),
-    # 'LightGBM': LGBMClassifier(),
-    # 'CatBoost': CatBoostClassifier(verbose=0)
+    'Gradient Boosting': GradientBoostingClassifier()
 }
 
-# 5. Treinar e testar os modelos
+# 6. Avaliar cada modelo
 resultados = []
+
+print("Avaliação dos Modelos:\n")
 
 for nome, modelo in modelos.items():
     modelo.fit(X_train, y_train)
     y_pred = modelo.predict(X_test)
+    
     acc = accuracy_score(y_test, y_pred)
-    resultados.append((nome, acc))
+    f1 = f1_score(y_test, y_pred, average='macro', zero_division=0)
+    
+    resultados.append((nome, acc, f1))
 
-# 6. Exibir os resultados
-resultados.sort(key=lambda x: x[1], reverse=True)
-print("Acurácia dos modelos:")
-for nome, acc in resultados:
-    print(f"{nome:<20} -> Acurácia: {acc:.4f}")
+    print(f"Modelo: {nome}")
+    print(f"Acurácia: {acc:.4f}")
+    print(f"F1-Score (Macro): {f1:.4f}")
+    print("Relatório de Classificação:")
+    print(classification_report(y_test, y_pred, zero_division=0))
+    print("Matriz de Confusão:")
+    print(confusion_matrix(y_test, y_pred))
+    print("-" * 60)
+
+# 7. Mostrar ranking final por F1-Score Macro
+resultados.sort(key=lambda x: x[2], reverse=True)
+
+print("\nRanking Final dos Modelos:")
+print(f"{'Modelo':<25} {'Acurácia':<10} {'F1-Score (Macro)':<15}")
+print("-" * 50)
+for nome, acc, f1 in resultados:
+    print(f"{nome:<25} {acc:<10.4f} {f1:<15.4f}")
 ```
 
 
 
-## O que esse código faz?
-
-* Testa 7 modelos clássicos de classificação.
-* Padroniza os dados (essencial para modelos como SVM, KNN).
-* Compara todos com base na **acurácia**.
-* Permite fácil substituição ou adição de modelos como XGBoost e LightGBM (comentados ali).
-
-
-## Exemplo de saída:
+## 🧾 Exemplo da Saída Final (Ranking)
 
 ```
-Acurácia dos modelos:
-Random Forest        -> Acurácia: 0.9650
-Gradient Boosting    -> Acurácia: 0.9561
-Logistic Regression  -> Acurácia: 0.9474
-SVM                  -> Acurácia: 0.9386
-KNN                  -> Acurácia: 0.9211
-Naive Bayes          -> Acurácia: 0.9123
-Decision Tree        -> Acurácia: 0.9035
+Ranking Final dos Modelos:
+Modelo                   Acurácia   F1-Score (Macro)
+--------------------------------------------------
+Random Forest            0.9200     0.9133
+Gradient Boosting        0.9100     0.9041
+Logistic Regression      0.8900     0.8800
+...
 ```
+
+
+
+### Nesta comparação há:
+
+* **Acurácia** (o quão certo o modelo está no geral)
+* **F1-Score Macro** (o quão bem ele está equilibrando o desempenho entre todas as classes)
+* **Matriz de confusão e classificação detalhada**
+* **Ranking ordenado por F1 Macro**, que é ideal para problemas multiclasse
 
