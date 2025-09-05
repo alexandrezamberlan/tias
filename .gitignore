@@ -3,3 +3,4 @@ venv
 *.class
 *.exe
 *.obj
+.DS_Store
