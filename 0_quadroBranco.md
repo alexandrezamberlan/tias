@@ -1,5 +1,18 @@
 # Quadro Branco
 
+## Semana 8
+    - Discussão apresentação da ER Clinic
+    - Apresentação do trabalho de extensão - SOMDIABETES
+        - sistema web python-django: diferentes usuários: administrador, paciente, nutricionista, médico, educador físico
+            - ideia é refatorar o app ALIMENTOS para que a API receba a relação de alimentos consumidos e retorne em JSON a quantidade de kcal, carb e unidades de insulina.
+    - Fechamentos de mineração de dados: predição e previsão.
+    
+## Semana 7
+    - Apresentação da ER Clinic
+        - Prontuário eletrônico Inteligente com uso de API ChatGPT
+## Semana 6
+    - Exercícios de pandas e numpy
+
 ## Semana 5
     - Uso de pandas e numpy - https://github.com/alexandrezamberlan/python-cienciadados
     - Fixação de predição e previsão
