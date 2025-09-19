@@ -16,23 +16,48 @@ from sklearn.svm import SVC
 url = 'https://raw.githubusercontent.com/alexandrezamberlan/tias/refs/heads/main/predicao_previsao_codigos_exemplos/glicose_data.csv'
 df = pd.read_csv(url)
 
-# 2. Features e variável alvo
+# 2. Definir as variaveis de interesse em novo dataframe
+df_com_variaveis_interesse = df[['GLICEMIA', 'INSULINA','KCAL','CARB', 'SONO', 'padel']]
+
+# 3. Apagar linhas com colunas em branco ou nulas
+df_com_variaveis_interesse = df_com_variaveis_interesse.dropna()
+
+# 4. Substituir strings por inteiros
+df_com_variaveis_interesse["GLICEMIA"] = df_com_variaveis_interesse["GLICEMIA"].replace({
+    "Acima": 2,
+    "Normal": 1,
+    "Abaixo": 0
+})
+
+df_com_variaveis_interesse["KCAL"] = df_com_variaveis_interesse["KCAL"].replace({
+    "Acima": 2,
+    "Recomendado": 1,
+    "Abaixo": 0
+})
+
+df_com_variaveis_interesse["CARB"] = df_com_variaveis_interesse["CARB"].replace({
+    "Acima": 2,
+    "Recomendado": 1,
+    "Abaixo": 0
+})
+
+# 5. Features e variável alvo
 features = ['INSULINA', 'KCAL', 'CARB', 'SONO', 'padel']
 target = 'GLICEMIA'
 
-X = df[features]
-y = df[target]
+X = df_com_variaveis_interesse[features]
+y = df_com_variaveis_interesse[target]
 
-# 3. Divisão treino/teste com estratificação
+# 6. Divisão treino/teste com estratificação
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.3, random_state=42, stratify=y)
 
-# 4. Padronizar (necessário para SVM e KNN)
+# 7. Padronizar (necessário para SVM e KNN)
 scaler = StandardScaler()
 X_train = scaler.fit_transform(X_train)
 X_test = scaler.transform(X_test)
 
-# 5. Modelos de classificação
+# 8. Modelos de classificação
 modelos = {
     'Logistic Regression': LogisticRegression(max_iter=1000),
     'Decision Tree': DecisionTreeClassifier(),
@@ -43,7 +68,7 @@ modelos = {
     'Gradient Boosting': GradientBoostingClassifier()
 }
 
-# 6. Avaliar cada modelo
+# 9. Avaliar cada modelo
 resultados = []
 
 print("Avaliação dos Modelos:\n")
@@ -66,11 +91,12 @@ for nome, modelo in modelos.items():
     print(confusion_matrix(y_test, y_pred))
     print("-" * 60)
 
-# 7. Mostrar ranking final por F1-Score Macro
+# 10. Mostrar ranking final por F1-Score Macro
 resultados.sort(key=lambda x: x[2], reverse=True)
 
 print("\nRanking Final dos Modelos:")
 print(f"{'Modelo':<25} {'Acurácia':<10} {'F1-Score (Macro)':<15}")
 print("-" * 50)
 for nome, acc, f1 in resultados:
+
     print(f"{nome:<25} {acc:<10.4f} {f1:<15.4f}")
