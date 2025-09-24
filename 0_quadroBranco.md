@@ -4,6 +4,9 @@
     - IA Generativa
         - API para integração: gemini e openai
         - Programando prompt em gemini + google colab
+        - Conceitos:
+            LLM: modelo de IA com conhecimento: online (via API de acesso) ou offline (modelo baixado e pós-treinado|treinamento fino)
+            Prompt: string com contexto/system + pergunta/texto
         
 ## Semana 8
     - Discussão apresentação da ER Clinic
