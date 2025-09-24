@@ -40,6 +40,7 @@ json = response.candidates[0].content.parts[0].text.strip()
 palavras = pergunta.split()
 palavras += contexto.split()
 palavras += json.split()
+palavras += str(response).split()
 
 num_palavras = len(palavras)
 
