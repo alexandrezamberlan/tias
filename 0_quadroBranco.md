@@ -1,5 +1,10 @@
 # Quadro Branco
 
+## Semana 9
+    - IA Generativa
+        - API para integração: gemini e openai
+        - Programando prompt em gemini + google colab
+        
 ## Semana 8
     - Discussão apresentação da ER Clinic
     - Apresentação do trabalho de extensão - SOMDIABETES
