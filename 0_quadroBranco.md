@@ -1,5 +1,12 @@
 # Quadro Branco
 
+
+## Semana 10
+    - Atividade avaliativa
+        - alterar o código link: 
+        - Os dados a serem enviados devem estar em um JSON padrão
+        - Os dados recebido devem estar em um formato de JSON pré-definido
+
 ## Semana 9
     - IA Generativa
         - API para integração: gemini e openai
