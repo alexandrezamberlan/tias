@@ -45,6 +45,14 @@ response = client.models.generate_content(
 
 resposta_json = response.candidates[0].content.parts[0].text.strip()
 
+
+if resposta_json.startswith('```json'):
+  resposta_json = resposta_json[7:]
+if resposta_json.startswith('```'):
+  resposta_json = resposta_json[3:]
+if resposta_json.endswith('```'):
+  resposta_json = resposta_json[:-3]
+
 # Função para calcular os tokens
 palavras = pergunta.split()
 palavras += contexto.split()
