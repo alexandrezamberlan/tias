@@ -67,10 +67,7 @@ print(resposta_json)
 
 lista_alimentos, calorias, carboidratos, qtd_insulina = desmontar_json(resposta_json)
 
-
-
-
-
-
-
-x, y 
+print(lista_alimentos)
+print(calorias)
+print(carboidratos)
+print(qtd_insulina)
