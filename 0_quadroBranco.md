@@ -58,4 +58,9 @@
 
 ## Semana 1
     - Apresentação do Plano de Aula
+        - Temas ou conteúdos trabalhados
+        - Nova forma de avaliação
+            - 20% da nota é a participação efetiva
+            - 20% da nota será as anotações em sala de aula
+            - 60% desafios e trabalhos
     - Criação do Mapa Mental da Disciplina (arquivo mapaMentalTIAS.png)
