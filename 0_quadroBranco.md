@@ -52,6 +52,16 @@
 ## Semana 3
     - Apresentação e discussão da pesquisa
     - Entender na prática a diferença de Predição e Previsão
+        - códigos python no Google Colab
+            - pandas
+                - dataframes: são armazenados pós ETL
+                - métodos ou recursos de leitura de dados (SGBD ou csv ou json)
+            - numpy
+                - tratamento de estruturas de dados e conversões
+            - scikitlearning:
+                - modelos pré-treinados (teoria de RNA: amostras repetidas e ajustes de peso):
+                    - predição (classifica ou categoriza ou rotula ou etiqueta)
+                    - previsão (a partir de série temporal estima o próximo item da série)
 
 ## Semana 2
     - Realização da tarefa/desafio 1: Pesquisar no site TCCOnline (https://tcconline.lapinf.ufn.edu.br) trabalhos finais de graduação que investigaram e/ou aplicaram a Computação (em geral) em contextos da Saúde. Montar um quadro com: título do trabalho, curso, nomes aluno e orientador, link do trabalho, descrição básica do trabalho, rotinas da Saúde trabalhadas (diagnóstico; monitoramento; recomendação; predição ou previsão)
