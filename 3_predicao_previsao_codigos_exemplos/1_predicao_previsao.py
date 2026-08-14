@@ -1,7 +1,7 @@
 '''
     O código ilustra a aplicação da predição e da previsão
     
-    Predição: modelo estima se um paciente tem risco de desenvolver hipertensão com base nos dados coletados (IMC, idade, histórico familiar). Pode ser sobre um paciente atual ou de um exame passado — não precisa ser futuro. Contexto: Risco de hipertensão - classifica em alto, baixo risco.
+    Predição: modelo rotula se um paciente tem risco de desenvolver hipertensão com base nos dados coletados (IMC, idade, histórico familiar). Pode ser sobre um paciente atual ou de um exame passado — não precisa ser futuro. Contexto: Risco de hipertensão - classifica em alto, baixo risco.
     
     Previsão: modelo prevê o número de internações nos próximos meses com base no histórico de internações mensais. Sempre sobre o futuro, usando padrão temporal. Contexto: Demanda hospitalar - estima número de internações futuras usando histórico mensal.    
 '''
