@@ -98,5 +98,4 @@ print("\nRanking Final dos Modelos:")
 print(f"{'Modelo':<25} {'Acurácia':<10} {'F1-Score (Macro)':<15}")
 print("-" * 50)
 for nome, acc, f1 in resultados:
-
     print(f"{nome:<25} {acc:<10.4f} {f1:<15.4f}")
