@@ -22,6 +22,8 @@ Esta base de dados sintética contém 250 linhas e foi estruturada especificamen
 
 ## Problema 2
 
+https://github.com/alexandrezamberlan/tias/blob/main/3_predicao_previsao_codigos_exemplos/dados_saude_predicao.csv
+
 ### Estrutura do Arquivo
 
   - X (Features):
