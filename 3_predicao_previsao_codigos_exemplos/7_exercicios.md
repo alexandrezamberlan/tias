@@ -39,3 +39,7 @@ https://github.com/alexandrezamberlan/tias/blob/main/3_predicao_previsao_codigos
 
   1) Analisar a matriz de confusão para saber se os dados usados no treinamento foram adequados (com ou sem overfitting)
   2) Analisar as variáveis de métricas Acurácia e F1-Score (bem como explica-las)
+
+## Apresentação ao professor
+
+  Após os resultados gerados, é preciso defender (com justificativa) se os dados utilizados no treinamento são válidos, ou seja, se o treinamento de fato surtiu efeito nos modelos e se algum desses modelos podem ser utilizados em produção.
