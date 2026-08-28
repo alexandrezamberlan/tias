@@ -34,3 +34,8 @@ https://github.com/alexandrezamberlan/tias/blob/main/3_predicao_previsao_codigos
   
   - y (Target):
     - Risco_Internacao: Variável alvo (0 para baixo risco / sem internação, 1 para alto risco / necessidade de internação)
+
+## Análise de resultados
+
+  1) Analisar a matriz de confusão para saber se os dados usados no treinamento foram adequados (com ou sem overfitting)
+  2) Analisar as variáveis de métricas Acurácia e F1-Score (bem como explica-las)
