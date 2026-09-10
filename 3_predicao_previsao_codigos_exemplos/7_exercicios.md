@@ -1,6 +1,6 @@
 # Exercício de fixação de comparativo na PREDIÇÃO
 
-Tendo como base os códigos comparativos de predição, refaça usando a seguinte fonte de dados... 
+Tendo como base os códigos comparativos de predição, refaça usando a seguinte fonte de dados.
 
 
 ## Problema 1
