@@ -37,9 +37,32 @@ https://github.com/alexandrezamberlan/tias/blob/main/3_predicao_previsao_codigos
 
 ## Análise de resultados
 
-  1) Analisar a matriz de confusão para saber se os dados usados no treinamento foram adequados (com ou sem overfitting)
-  2) Analisar as variáveis de métricas Acurácia e F1-Score (bem como explica-las)
+  1) Analisar os resultados obtidos nos dados de treinamento e de teste, utilizando a matriz de confusão e as métricas de avaliação, buscando identificar possíveis sinais de overfitting. Não considere a matriz de confusão isoladamente como evidência de overfitting. Compare o desempenho do modelo nos diferentes conjuntos de dados.
+  2) Apresente e explique as métricas Accuracy (Acurácia) e F1-Score dos modelos avaliados. Explique o significado de cada métrica e justifique qual delas é mais adequada para comparar os modelos utilizados neste problema.
 
+     
 ## Apresentação ao professor
 
-  Após os resultados gerados, é preciso defender (com justificativa) se os dados utilizados no treinamento são válidos, ou seja, se o treinamento de fato surtiu efeito nos modelos e se algum desses modelos podem ser utilizados em produção.
+  Após os resultados gerados, é preciso defender (com justificativa)  se os modelos foram adequadamente treinados e se apresentam capacidade de generalização para dados não utilizados no treinamento, ou seja, se o treinamento de fato surtiu efeito nos modelos e se algum desses modelos podem ser utilizados em produção.
+
+# PyCaret
+
+Reproduzir, utilizando o PyCaret, o processo de treinamento, comparação e avaliação dos modelos preditivos desenvolvidos nos desafios anteriores, analisando se os resultados obtidos são consistentes com aqueles encontrados anteriormente.
+
+1) Entenda o papel do PyCaret.
+2) Entenda como configura-lo no seu ambiente de desenvolvimento.
+3) Reimplemente os dois problemas anteriores utilizando o PyCaret, substituindo, sempre que possível, a implementação manual dos modelos pelas funcionalidades disponibilizadas pela biblioteca.
+4) Utilize os recursos do PyCaret para treinar e comparar diferentes modelos de classificação, identificando quais modelos apresentam melhor desempenho. Utilize a funcionalidade de comparação de modelos do PyCaret (compare_models) e apresente os resultados obtidos.
+
+## Importante
+
+O objetivo do exercício não é apenas executar os comandos do PyCaret. O aluno deverá compreender e explicar o processo realizado pela ferramenta, interpretando os resultados obtidos.
+
+Compare os resultados obtidos anteriormente, utilizando a implementação tradicional dos modelos, com os resultados obtidos utilizando o PyCaret.
+
+O que é preciso saber:
+- Os melhores modelos foram os mesmos?
+- As métricas foram semelhantes?
+- Houve diferenças significativas?
+- Por que os resultados podem ter sido diferentes?
+- Qual abordagem você considera mais adequada para este tipo de problema: implementação manual ou PyCaret? Justifique.
