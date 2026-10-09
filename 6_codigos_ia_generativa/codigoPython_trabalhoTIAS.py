@@ -54,9 +54,9 @@ if resposta_json.endswith('```'):
   resposta_json = resposta_json[:-3]
 
 # Função para calcular os tokens
-palavras = pergunta.split()
-palavras += contexto.split()
-palavras += json.split()
+palavras = resposta_json.split()
+palavras += contexto_json.split()
+palavras += resposta_json.split()
 palavras += str(response).split()
 num_palavras = len(palavras)
 # Estimativa: 1 palavra ≈ 1.33 tokens (média comum)
@@ -71,3 +71,5 @@ print(lista_alimentos)
 print(calorias)
 print(carboidratos)
 print(qtd_insulina)
+
+print()
