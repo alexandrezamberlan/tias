@@ -6,7 +6,6 @@ Uma IA Generativa baseada em um Large Language Model (LLM) recebe uma entrada do
 
 [How LLMs like ChatGPT work: Tokenization, Embeddings, Transformer Architecture | Mahender Goud Thanda posted on the topic | LinkedIn](https://images.openai.com/static-rsc-4/Uz68PGenpPd4-Lcw63ZyNR6X3MJcFS-yYfSqNfBJJixpWcvQSDD1Qi-j8yFf7HUepvMu9dLSO0BjjeIFgGw2aLoRA4aYyZ8gu8NnsltKqOY_BtS993rUjZGOnkq3KYnZvdDjY-5ezDechCzP8G4pG6ra61RKEw9Q85jAllZQxQQ?purpose=inline)
 
-[linkedin.com](https://www.linkedin.com/posts/mahender-goud-thanda_ai-llm-machinelearning-activity-7363765802925256704-4H3L?utm_source=chatgpt.com)
 
 O fluxo pode ser representado conceitualmente da seguinte maneira:
 
