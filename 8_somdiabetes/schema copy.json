@@ -1,0 +1,90 @@
+{
+    "alimento_alimento": {
+        "descricao": "CharField(100)",
+        "unidade": "CharField(100)",
+        "calorias": "DecimalField(5,0)",
+        "carboidratos": "DecimalField(5,0)",
+        "fonte": "CharField(100)",
+        "slug": "SlugField(200)"
+    },
+    "aviso_aviso": {
+        "titulo": "CharField(100, unique)",
+        "texto": "TextField(500)",
+        "data": "DateField",
+        "destinatario": "CharField(20)",
+        "enviado": "BooleanField",
+        "is_active": "BooleanField",
+        "slug": "SlugField(200)"
+    },
+    "dado_clinico_dadoclinico": {
+        "cliente": "ForeignKey(UsuarioUsuario)",
+        "tipo_diabetes": "CharField(20)",
+        "bolus_alimentar": "PositiveIntegerField",
+        "bolus_correcao": "PositiveIntegerField",
+        "glicemia_meta": "PositiveIntegerField",
+        "altura": "PositiveIntegerField",
+        "peso": "PositiveIntegerField",
+        "data_registro": "DateField",
+        "is_active": "BooleanField",
+        "slug": "SlugField(200)",
+        "medicamentos": "ManyToManyField(MedicamentoMedicamento)"
+    },
+    "exercicio_exercicio": {
+        "nome": "CharField(25, unique)",
+        "descricao": "TextField(1000)",
+        "tipo": "CharField(15)",
+        "slug": "SlugField(200)"
+    },
+    "medicamento_medicamento": {
+        "nome_comercial": "CharField(25)",
+        "principio_ativo": "CharField(18)",
+        "classe_terapeutica": "CharField(25)",
+        "is_active": "BooleanField",
+        "slug": "SlugField(200)"
+    },
+    "registro_atividade_registroatividade": {
+        "cliente": "ForeignKey(UsuarioUsuario)",
+        "data": "DateField",
+        "hora": "TimeField",
+        "atividade": "ForeignKey(ExercicioExercicio)",
+        "duracao": "PositiveIntegerField",
+        "esforco": "CharField(27)",
+        "frequencia_cardiaca_media": "PositiveIntegerField",
+        "total_calorias": "PositiveIntegerField",
+        "slug": "SlugField(200)"
+    },
+    "registro_refeicao_registrorefeicao": {
+        "cliente": "ForeignKey(Dado_clinicoDadoclinico)",
+        "registro_alimentacao": "TextField(1000)",
+        "glicemia_vigente": "PositiveIntegerField",
+        "quantidade_insulina_recomendada": "PositiveIntegerField",
+        "nome_insulina": "CharField(200)",
+        "total_carboidratos": "PositiveIntegerField",
+        "total_calorias": "PositiveIntegerField",
+        "data_hora_registro": "DateTimeField",
+        "slug": "SlugField(200)",
+        "alimentos": "ManyToManyField(AlimentoAlimento)"
+    },
+    "relatorio_relatorio": {
+        "titulo": "CharField(200, unique)",
+        "descricao": "TextField",
+        "script_sql": "TextField",
+        "resposta": "TextField",
+        "data": "DateField",
+        "slug": "SlugField(200)"
+    },
+    "usuario_usuario": {
+        "password": "CharField(128)",
+        "last_login": "DateTimeField",
+        "tipo": "CharField(30)",
+        "nome": "CharField(100)",
+        "data_nascimento": "DateField",
+        "sexo": "CharField(10)",
+        "email": "EmailField(100, unique)",
+        "celular": "CharField(14)",
+        "cpf": "CharField(14)",
+        "aceita_termo": "BooleanField",
+        "is_active": "BooleanField",
+        "slug": "SlugField(200)"
+    }
+}

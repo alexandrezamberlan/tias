@@ -1,0 +1,67 @@
+Schema com Tabelas, seus respectivos campos e significados de dados:
+    "alimento_alimento":  tabela que armazena os alimentos cadastrados na plataforma
+        "descricao": explicação ou descrição do alimento
+        "unidade": unidade de medida do alimento
+        "calorias": quantidade de calorias do alimento em gramas
+        "carboidratos": quantidde de carboidratos do alimento em gramas
+        "fonte": qual o referência da informação do alimento
+    
+    "aviso_aviso": tabela que armazena os avisos enviados aos usuários da plataforma
+        "titulo": uma descrição curta do aviso
+        "texto": informações detalhadas do aviso
+        "data": quando o aviso foi criado
+        "destinatario": quais usuários devem receber o aviso
+        "enviado": indica se o aviso foi enviado        
+    
+    "dado_clinico_dadoclinico": armazena informações clínicas do cliente em forma de evolução históricas
+        "cliente": faz referência a tabela usuario_usuario que é o usuário ou paciente ou cliente dono dos dados clínicos
+        "tipo_diabetes": tipo de diabetes do cliente ou paciente
+        "bolus_alimentar": bolus alimentar recomendado para o cliente
+        "bolus_correcao": bolus de correção recomendado para o cliente
+        "glicemia_meta": valor alvo de glicemia do cliente para um dia a dia saudável
+        "altura": tamanho do paciente ou cliente em centímetros
+        "peso": peso do paciente ou cliente em quilos
+        "data_registro": data de registro dos dados clínicos
+        "medicamentos": relação de medicamentos (faz referência a tabela medicamento_medicamento) associados ao dado clínico do cliente
+    
+    "exercicio_exercicio": tabela que armazena os exercícios físicos cadastrados na plataforma
+        "nome": nome do exercício físico
+        "descricao": informações detalhadas sobre o exercício físico
+        "tipo": tipo de exercício físico
+    
+    "medicamento_medicamento": tabela que armazena os medicamentos cadastrados na plataforma
+        "nome_comercial": nome comercial do medicamento
+        "principio_ativo": nome do princípio ativo do medicamento
+        "classe_terapeutica": classe terapêutica do medicamento        
+    
+    "registro_atividade_registroatividade": tabela que armazena os registros de atividades físicas realizadas pelos clientes ou pacientes
+        "cliente": faz referência a tabela usuario_usuario que é o usuário ou paciente ou cliente dono do registro de atividade
+        "data": data em que a atividade física foi realizada
+        "hora": hora em que a atividade física foi realizada
+        "atividade": faz referência a tabela exercicio_exercicio que é o exercício físico realizado pelo cliente
+        "duracao": tempo em minutos da atividade física realizada pelo cliente
+        "esforco": nível de esforço da atividade física realizada pelo cliente, na escala borg
+        "frequencia_cardiaca_media": frequência cardíaca média durante a atividade física realizada pelo cliente
+        "total_calorias": total de calorias queimadas durante a atividade física realizada pelo cliente
+    
+    "registro_refeicao_registrorefeicao": tabela que armazena os registros de refeições realizadas pelos clientes ou pacientes ao longo do dia
+        "cliente": faz referência a tabela dado_clinico_dadoclinico que é o dado clínico do usuário ou paciente ou cliente dono do registro de refeição
+        "registro_alimentacao": principal campo de registro de alimentos consumidos na refeição pelo cliente ou paciente. Armazena uma descrição detalhada dos alimentos consumidos
+        "glicemia_vigente": glicemia medida antes da refeição
+        "quantidade_insulina_recomendada": quantidade de insulina recomendada após análise do registro de alimentação e da glicemia vigente
+        "nome_insulina": nome da insulina ou medicamento recomendada após análise do registro de alimentação e da glicemia vigente
+        "total_carboidratos": total de carboidratos consumidos no registro total da refeição em gramas
+        "total_calorias": total de calorias consumidas no registro total da refeição em gramas
+        "data_hora_registro": data e hora do registro da refeição realizada pelo cliente
+        "alimentos": relação de alimentos (faz referência a tabela alimento_alimento) associados ao registro de refeição do cliente
+    
+    "usuario_usuario": tabela que armazena os usuários da plataforma, como clientes ou pacientes, médicos, nutricionistas e educadores físicos
+        "tipo": tipo de usuário na plataforma (cliente, médico, nutricionista, educador físico)
+        "nome": nome completo do usuário, paciente ou cliente
+        "data_nascimento": data de nascimento do usuário
+        "sexo": sexo do usuário
+        "email": email de contato do usuário
+        "celular": número de celular do usuário
+        "cpf": cpf
+
+    
