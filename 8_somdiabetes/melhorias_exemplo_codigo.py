@@ -1,3 +1,5 @@
+# por Bernardo Paz
+
 import warnings
 import json
 import numpy as np
